@@ -1,0 +1,127 @@
+.wrap {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  container-type: size;
+}
+
+.frame {
+  position: relative;
+  width: min(100cqw, calc(100cqh * 16 / 9));
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #0f1420;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s ease;
+  container-type: size;
+}
+
+.speaking {
+  box-shadow:
+    0 0 0 2px rgba(124, 92, 255, 0.55),
+    0 0 40px rgba(124, 92, 255, 0.25);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+  animation: fade 0.25s ease;
+}
+
+.html {
+  height: 100%;
+  padding: 7cqh 7cqw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4cqh;
+  background: linear-gradient(160deg, #182033, #0f1420 65%);
+  animation: fade 0.25s ease;
+}
+
+.builtin {
+  background:
+    radial-gradient(70cqw 70cqh at 100% 0%, rgba(124, 92, 255, 0.35), transparent 60%),
+    radial-gradient(60cqw 60cqh at 0% 100%, rgba(34, 211, 238, 0.18), transparent 60%),
+    #0e1320;
+}
+
+.eyebrow {
+  color: var(--accent-2);
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: max(11px, 2.2cqh);
+}
+
+.html h1 {
+  margin: 0;
+  font-size: max(20px, 6.5cqh);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.html h1.cover {
+  font-size: max(24px, 8.5cqh);
+  background: linear-gradient(90deg, #fff, #c9bdff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.html ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4cqh;
+}
+
+.html li {
+  position: relative;
+  padding-left: 3.2cqw;
+  font-size: max(13px, 3.6cqh);
+  line-height: 1.4;
+  color: #d5dcea;
+}
+
+.html li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 1.2cqw;
+  height: 1.2cqw;
+  max-width: 10px;
+  max-height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+}
+
+.counter {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  font-size: 12px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

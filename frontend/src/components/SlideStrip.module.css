@@ -1,0 +1,71 @@
+.strip {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px 6px;
+  flex-shrink: 0;
+}
+
+.thumb {
+  position: relative;
+  flex: 0 0 150px;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--bg-elev-2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  opacity: 0.7;
+  transition:
+    opacity 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.thumb:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.active {
+  opacity: 1;
+  border-color: var(--accent);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #fff;
+}
+
+.textThumb {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* Bottom margin keeps the clamped title clear of the slide-number badge. */
+  margin: 9px 10px 24px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  max-height: 42px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.num {
+  position: absolute;
+  left: 6px;
+  bottom: 5px;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
