@@ -4,6 +4,13 @@ A voice-first AI presenter. Pick a deck (a built-in 6-slide Synthio Labs overvie
 you upload), press **Start**, and an agent presents it out loud. Ask questions by voice and it
 jumps to the right slide; talk over it and it stops immediately.
 
+## Demo
+
+[Watch the 2-minute demo video](https://drive.google.com/file/d/12fi2CMFOroMU5P3y0P7CffQGl6RZdIPB/view?usp=sharing)
+
+The demo shows voice narration, interruption, question-based slide navigation, agent activity,
+and safety checks.
+
 - **Frontend:** React 18 + Vite + TypeScript, Web Audio AudioWorklets (PCM16, 24 kHz mono).
 - **Backend:** FastAPI + OpenAI Agents SDK realtime (`openai-agents`), speech-to-speech via
   **Azure OpenAI `gpt-realtime`** (OpenAI is an env-swappable fallback).
